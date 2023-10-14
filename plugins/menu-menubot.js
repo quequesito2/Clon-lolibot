@@ -98,20 +98,48 @@ let menu = `⌜ *${wm}* ⌟
 □ *⚓ Rango:* ${role}
 ${readMore}
 
-┌───⊷ *MENU PRINCIPAL*
-┊□ _${usedPrefix}Botmenu_
-┊□ _${usedPrefix}Menuall_ 
-┊□ _${usedPrefix}Menujuegos_ 
-┊□️ _${usedPrefix}Descargas_ 
-┊□ _${usedPrefix}Menuchat_
-┊□ _${usedPrefix}Convertidores_
-┊□ _${usedPrefix}Efectos_
-┊□ _${usedPrefix}Menurandom_
-┊□ _${usedPrefix}Buscadores_
-┊□ _${usedPrefix}Herramientas_
-┊□ _${usedPrefix}Stickers_
-┊□ _${usedPrefix}Menuowner_
-└───────────────────`.trim()
+□ *COMO INSTALAR EL BOT*
+https://youtu.be/O_j2q5xCg3A
+
+┌───⊷ *INFO DEL BOT*
+┊□ _${usedPrefix}infobot_
+┊□ _${usedPrefix}grupos_
+┊□ _${usedPrefix}instalarbot_
+┊□ _${usedPrefix}estado_
+┊□ _${usedPrefix}sc_
+┊□ _${usedPrefix}ping_
+┊□ _Bot_
+┊□ _¿Qué es un Bot?_
+┊□ _Términos y condiciones_
+└─────────────
+
+┌───⊷ *UNIR UN BOT A TU GRUPO*
+┆ 🤖 _${usedPrefix}join *link del grupo*_ 
+┆ 🤖 _${usedPrefix}botemporal *link de grupo*_
+└─────────────
+
+┌───⊷ *SERBOT & JADIBOT*
+┆ 🤖 _${usedPrefix}serbot_
+┆ 🤖 _${usedPrefix}stop_
+┆ 🤖 _${usedPrefix}bots_
+└─────────────
+
+┌───⊷ *NUMERO DEL CREADOR*
+┆🤖 _${usedPrefix}owner_
+└─────────────
+
+┌───⊷ *REPORTA COMANDO CON ERRORES*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆ *Reporta cualquier comando que falle para poder solucionarlo*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆🚫 _${usedPrefix}reporte *<texto>*_
+└─────────────
+
+┌───⊷ *TOP EN LOLIBOT-MD*
+┆ *Averigua en que Top te encuentras!!*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆🏆➺ _${usedPrefix}top | lb | leaderboard_
+└─────────────`.trim()
     conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
 	
 } catch (e) {
@@ -121,7 +149,7 @@ console.log(e)
 }}
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(menu|menú\?)$/i
+handler.command = /^(botmenu|Botmenu\?)$/i
 //handler.register = true
 handler.exp = 50
 handler.fail = null

@@ -80,12 +80,6 @@ let menu = `⌜ *${wm}* ⌟
 
 *Hola ${taguser}*
 
-□ *Creador: Mario*
-□ *Numero del bot ofc: wa.me/573183650526*
-□ *Tiempos activos :* *${uptime}*
-□ *Usuarios:* *${Object.keys(global.db.data.users).length}*
-□ *Registrado: ${rtotalreg} de ${totalreg}* ${(conn.user.jid == global.conn.user.jid ? '' : `\n□ *Soy un sub bot del:* wa.me/${global.conn.user.jid.split`@`[0]}`) || ''}
-    
 ◉ _*INFO DEL USUARIO*_
 □ *🙌 Registrado:* ${user.registered === true ? '✅' : '❌ _#verificar_'}
 □ *🎟️ Premium:* ${user.premiumTime > 0 ? '✅' : '❌ _#pase premium_'}
@@ -98,20 +92,37 @@ let menu = `⌜ *${wm}* ⌟
 □ *⚓ Rango:* ${role}
 ${readMore}
 
-┌───⊷ *MENU PRINCIPAL*
-┊□ _${usedPrefix}Botmenu_
-┊□ _${usedPrefix}Menuall_ 
-┊□ _${usedPrefix}Menujuegos_ 
-┊□️ _${usedPrefix}Descargas_ 
-┊□ _${usedPrefix}Menuchat_
-┊□ _${usedPrefix}Convertidores_
-┊□ _${usedPrefix}Efectos_
-┊□ _${usedPrefix}Menurandom_
-┊□ _${usedPrefix}Buscadores_
-┊□ _${usedPrefix}Herramientas_
-┊□ _${usedPrefix}Stickers_
-┊□ _${usedPrefix}Menuowner_
-└───────────────────`.trim()
+┌───⊷ *EFECTOS Y LOGOS*
+┆ *Crea Logos o personaliza*
+┆ *la información del Logo!!*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆🖍️ _${usedPrefix}mensajefalso *<nombre|mensaje>*_
+┆🖍️ _${usedPrefix}phmaker *<opcion> <imagen>*_
+┆🖍️ _${usedPrefix}logos *<efecto> <texto>*_
+┆🖍️ _${usedPrefix}logochristmas *<texto>*_
+┆🖍️ _${usedPrefix}logocorazon *<texto>*_
+┆🖍️ _${usedPrefix}ytcomment *<texto>*_
+┆🖍️ _${usedPrefix}simpcard *<@tag>*_
+┆🖍️ _${usedPrefix}lolice *<@tag>*_
+┆🖍️ _${usedPrefix}itssostupid_
+┆🖍️ _${usedPrefix}pixelar_
+┆🖍️ _${usedPrefix}blur_
+└─────────────
+
+┌───⊷ *EFECTOS PARA NOTAS DE VOZ/AUDIOS*
+┆ *Realiza Modificaciones*
+┆ *al Audio o Nota de Voz!!*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆🎤 _${usedPrefix}audioefectomenu_
+└─────────────
+
+┌───⊷ *AUDIOS*
+┆ *Visita el Menú de Audios!!*
+┆ *Disfruta de una Gran Variedad*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆🔊 _${usedPrefix}menu2_
+┆🔊 _${usedPrefix}audios_
+└─────────────`.trim()
     conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
 	
 } catch (e) {
@@ -121,7 +132,7 @@ console.log(e)
 }}
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(menu|menú\?)$/i
+handler.command = /^(efectos|Efectos\?)$/i
 //handler.register = true
 handler.exp = 50
 handler.fail = null

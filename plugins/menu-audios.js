@@ -102,7 +102,6 @@ let str = `
 ° ඬ⃟🔊  _Vivan los novios_
 ° ඬ⃟🔊  _Marica quien_
 ° ඬ⃟🔊  _Es puto_
-° ඬ⃟🔊  _La biblia_
 ° ඬ⃟🔊  _Onichan_
 ° ඬ⃟🔊  _Bot puto_
 ° ඬ⃟🔊  _Feliz cumpleaños_

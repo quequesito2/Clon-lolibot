@@ -81,6 +81,7 @@ let menu = `⌜ *${wm}* ⌟
 *Hola ${taguser}*
 
 □ *Creador: Mario*
+□ *Numero del creador: wa.me/5492266466080*
 □ *Numero del bot ofc: wa.me/573183650526*
 □ *Tiempos activos :* *${uptime}*
 □ *Usuarios:* *${Object.keys(global.db.data.users).length}*
@@ -98,20 +99,45 @@ let menu = `⌜ *${wm}* ⌟
 □ *⚓ Rango:* ${role}
 ${readMore}
 
-┌───⊷ *MENU PRINCIPAL*
-┊□ _${usedPrefix}Botmenu_
-┊□ _${usedPrefix}Menuall_ 
-┊□ _${usedPrefix}Menujuegos_ 
-┊□️ _${usedPrefix}Descargas_ 
-┊□ _${usedPrefix}Menuchat_
-┊□ _${usedPrefix}Convertidores_
-┊□ _${usedPrefix}Efectos_
-┊□ _${usedPrefix}Menurandom_
-┊□ _${usedPrefix}Buscadores_
-┊□ _${usedPrefix}Herramientas_
-┊□ _${usedPrefix}Stickers_
-┊□ _${usedPrefix}Menuowner_
-└───────────────────`.trim()
+┌───⊷ *DESCARGAS*
+┆📥 _${usedPrefix}play *<texto>*_
+┆📥 _${usedPrefix}play.1 *<texto>*_
+┆📥 _${usedPrefix}play.2 *<texto>*_
+┆📥 _${usedPrefix}playdoc *<texto>*_
+┆📥 _${usedPrefix}playlist *<texto>*_
+┆📥 _${usedPrefix}playlist2 *<texto>*_
+┆📥 _${usedPrefix}spotify *<texto>*_
+┆📥 _${usedPrefix}tiktok *<enlace / link / url>*_
+┆📥 _${usedPrefix}instagram *<enlace / link / url>*_
+┆📥 _${usedPrefix}mediafire *<enlace / link / url>*_
+┆📥 _${usedPrefix}instagram *<enlace / link / url>*_
+┆📥 _${usedPrefix}gitclone *<enlace / link / url>*_
+┆📥 _${usedPrefix}gdrive *<enlace / link / url>*_
+┆📥 _${usedPrefix}twitter *<enlace / link / url>*_
+┆📥 _${usedPrefix}fb *<enlace / link / url>*_
+┆📥 _${usedPrefix}fb2 *<enlace / link / url>*_
+┆📥 _${usedPrefix}fb3 *<enlace / link / url>*_
+┆📥 _${usedPrefix}fb4 *<enlace / link / url>*_
+┆📥 _${usedPrefix}fb5 *<enlace / link / url>*_
+┆📥 _${usedPrefix}ytmp3 *<enlace / link / url>*_
+┆📥 _${usedPrefix}ytmp4 *<enlace / link / url>*_
+┆📥 _${usedPrefix}ytmp3doc *<enlace / link / url>*_
+┆📥 _${usedPrefix}ytmp4doc *<enlace / link / url>*_
+┆📥 _${usedPrefix}stickerpack *<enlace / link / url>*_
+┆📥 _${usedPrefix}stickerly *<texto>*_
+┆📥 _${usedPrefix}ringtone *<texto>*_
+┆📥 _${usedPrefix}soundcloud *<texto>*_
+┆📥 _${usedPrefix}imagen *<texto>*_
+┆📥 _${usedPrefix}pinteret *<texto>*_
+┆📥 _${usedPrefix}wallpaper *<texto>*_
+┆📥 _${usedPrefix}wallpaper2 *<texto>*_
+┆📥 _${usedPrefix}pptiktok *<nombre de usuario>*_
+┆📥 _${usedPrefix}igstalk *<nombre de usuario>*_
+┆📥 _${usedPrefix}igstory *<nombre de usuario>*_
+┆📥 _${usedPrefix}tiktokstalk *<username>*_
+└─────────────
+
+┌──`.trim()
     conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
 	
 } catch (e) {
@@ -121,7 +147,7 @@ console.log(e)
 }}
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(menu|menú\?)$/i
+handler.command = /^(descargas|Descargas\?)$/i
 //handler.register = true
 handler.exp = 50
 handler.fail = null

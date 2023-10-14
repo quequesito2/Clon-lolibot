@@ -79,13 +79,7 @@ let adReply = { fileLength: fsizedoc, seconds: fsizedoc, contextInfo: { forwardi
 let menu = `⌜ *${wm}* ⌟  
 
 *Hola ${taguser}*
-
-□ *Creador: Mario*
-□ *Numero del bot ofc: wa.me/573183650526*
-□ *Tiempos activos :* *${uptime}*
-□ *Usuarios:* *${Object.keys(global.db.data.users).length}*
-□ *Registrado: ${rtotalreg} de ${totalreg}* ${(conn.user.jid == global.conn.user.jid ? '' : `\n□ *Soy un sub bot del:* wa.me/${global.conn.user.jid.split`@`[0]}`) || ''}
-    
+ 
 ◉ _*INFO DEL USUARIO*_
 □ *🙌 Registrado:* ${user.registered === true ? '✅' : '❌ _#verificar_'}
 □ *🎟️ Premium:* ${user.premiumTime > 0 ? '✅' : '❌ _#pase premium_'}
@@ -98,20 +92,83 @@ let menu = `⌜ *${wm}* ⌟
 □ *⚓ Rango:* ${role}
 ${readMore}
 
-┌───⊷ *MENU PRINCIPAL*
-┊□ _${usedPrefix}Botmenu_
-┊□ _${usedPrefix}Menuall_ 
-┊□ _${usedPrefix}Menujuegos_ 
-┊□️ _${usedPrefix}Descargas_ 
-┊□ _${usedPrefix}Menuchat_
-┊□ _${usedPrefix}Convertidores_
-┊□ _${usedPrefix}Efectos_
-┊□ _${usedPrefix}Menurandom_
-┊□ _${usedPrefix}Buscadores_
-┊□ _${usedPrefix}Herramientas_
-┊□ _${usedPrefix}Stickers_
-┊□ _${usedPrefix}Menuowner_
-└───────────────────`.trim()
+┌───⊷ *JUEGOS*
+┆ *conando para la diversión del tu Grupos*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆🕹 _${usedPrefix}mates *<noob / easy / medium / hard / extreme /impossible /impossible2>*_
+┆🕹️ _${usedPrefix}ppt *<papel / tijera /piedra>*_
+┆🕹 _${usedPrefix}prostituto *<nombre / @tag>*_
+┆🕹️ _${usedPrefix}prostituta *<nombre / @tag>*_
+┆🕹️ _${usedPrefix}gay2 *<nombre / @tag>*_
+┆🕹️ _${usedPrefix}lesbiana *<nombre / @tag>*_
+┆🕹 _${usedPrefix}pajero *<nombre / @tag>*_
+┆🕹 _${usedPrefix}pajera *<nombre / @tag>*_
+┆🕹️ _${usedPrefix}puto *<nombre / @tag>*_
+┆🕹️ _${usedPrefix}puta *<nombre / @tag>*_
+┆🕹️ _${usedPrefix}manco *<nombre / @tag>*_
+┆🕹️ _${usedPrefix}manca *<nombre / @tag>*_
+┆🕹️ _${usedPrefix}rata *<nombre / @tag>*_
+┆🕹️ _${usedPrefix}love *<nombre / @tag>*_
+┆🕹️ _${usedPrefix}doxear *<nombre / @tag>*_
+┆🕹 _${usedPrefix}pregunta *<texto>*_
+┆🕹️ _${usedPrefix}suitpvp *<@tag>*_
+┆🕹️ _${usedPrefix}slot *<apuesta>*_
+┆🕹️ _${usedPrefix}ttt *<nombre sala>*_
+┆🕹️ _${usedPrefix}delttt_
+┆🕹️ _${usedPrefix}simi *<texto>*_
+┆🕹️ _${usedPrefix}top *<texto>*_
+┆🕹️ _${usedPrefix}topotakus_
+┆🕹️️ _${usedPrefix}top10gays_
+┆🕹️️ _${usedPrefix}toplind@s_
+┆🕹️️ _${usedPrefix}topput@s_
+┆🕹️️ _${usedPrefix}toppajer@s_
+┆🕹️️ _${usedPrefix}topotakus_
+┆🕹️️ _${usedPrefix}topintegrantes_
+┆🕹️️ _${usedPrefix}toplagrasa_
+┆🕹️️ _${usedPrefix}toppanafrescos_
+┆🕹️ _${usedPrefix}topshiposters_
+┆🕹️️ _${usedPrefix}toppajeros_
+┆🕹️️ _${usedPrefix}toplind@s_
+┆🕹️️ _${usedPrefix}topfamosos_
+┆🕹️️ _${usedPrefix}topsoltero
+┆🕹️️ _${usedPrefix}topparejas_
+┆🕹️ _${usedPrefix}formarpareja_
+┆🕹️ _${usedPrefix}verdad_
+┆🕹️ _${usedPrefix}reto_
+┆🕹️ _${usedPrefix}cancion_
+┆🕹️ _${usedPrefix}pista_
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆ 💞 𝙋𝙖𝙧𝙚𝙟𝙖𝙨
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆ *Declarate con alguien*
+┆ *para que sean Parejas!!*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆❤️➺ _${usedPrefix}listaparejas_
+┆❤️➺ _${usedPrefix}mipareja_
+┆❤️➺ _${usedPrefix}pareja *@tag*_
+┆❤️➺ _${usedPrefix}aceptar *@tag*_
+┆❤️➺ _${usedPrefix}rechazar *@tag*_
+┆❤️➺ _${usedPrefix}terminar *@tag*_
+└─────────────
+
+┌───⊷ *RPG - LIMITES - ECONÓMIAS*
+┆ *Compra, Adquiere Recuersos*
+┆ *Mejora Tú Nivel y Rango!!*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆💵 _${usedPrefix}verificar_
+┆💵 _${usedPrefix}unreg *<numero de serie>*_
+┆💵 _${usedPrefix}claim_
+┆💵 _${usedPrefix}lb_
+┆💵 _${usedPrefix}levelup_
+┆💵 _${usedPrefix}perfil_
+┆💵 _${usedPrefix}minar_
+┆💵 _${usedPrefix}buy_
+┆💵 _${usedPrefix}balance_
+┆💵 _${usedPrefix}myns_
+┆💵 _${usedPrefix}work_
+┆💵 _${usedPrefix}buyall_
+┆💵 _${usedPrefix}transfer *<tipo> <cantidad> <@tag>*_
+└─────────────`.trim()
     conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
 	
 } catch (e) {
@@ -121,7 +178,7 @@ console.log(e)
 }}
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(menu|menú\?)$/i
+handler.command = /^(Menujuegos|menujuegos\?)$/i
 //handler.register = true
 handler.exp = 50
 handler.fail = null

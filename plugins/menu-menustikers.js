@@ -80,12 +80,6 @@ let menu = `⌜ *${wm}* ⌟
 
 *Hola ${taguser}*
 
-□ *Creador: Mario*
-□ *Numero del bot ofc: wa.me/573183650526*
-□ *Tiempos activos :* *${uptime}*
-□ *Usuarios:* *${Object.keys(global.db.data.users).length}*
-□ *Registrado: ${rtotalreg} de ${totalreg}* ${(conn.user.jid == global.conn.user.jid ? '' : `\n□ *Soy un sub bot del:* wa.me/${global.conn.user.jid.split`@`[0]}`) || ''}
-    
 ◉ _*INFO DEL USUARIO*_
 □ *🙌 Registrado:* ${user.registered === true ? '✅' : '❌ _#verificar_'}
 □ *🎟️ Premium:* ${user.premiumTime > 0 ? '✅' : '❌ _#pase premium_'}
@@ -98,20 +92,45 @@ let menu = `⌜ *${wm}* ⌟
 □ *⚓ Rango:* ${role}
 ${readMore}
 
-┌───⊷ *MENU PRINCIPAL*
-┊□ _${usedPrefix}Botmenu_
-┊□ _${usedPrefix}Menuall_ 
-┊□ _${usedPrefix}Menujuegos_ 
-┊□️ _${usedPrefix}Descargas_ 
-┊□ _${usedPrefix}Menuchat_
-┊□ _${usedPrefix}Convertidores_
-┊□ _${usedPrefix}Efectos_
-┊□ _${usedPrefix}Menurandom_
-┊□ _${usedPrefix}Buscadores_
-┊□ _${usedPrefix}Herramientas_
-┊□ _${usedPrefix}Stickers_
-┊□ _${usedPrefix}Menuowner_
-└───────────────────`.trim()
+┌───⊷ *STICKERS*
+┆ *Realiza stickers o crea*
+┆ *stickers con filtros!!*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆👽 _${usedPrefix}sticker *<responder a imagen o video>*_
+┆👽 _${usedPrefix}sticker *<enlace / link / url>*_
+┆👽 _${usedPrefix}s *<responder a imagen o video>*_
+┆👽 _${usedPrefix}s *<enlace / link / url>*_
+┆👽 _${usedPrefix}sfull *<imagen o video>*_
+┆👽 _${usedPrefix}emojimix *<emoji 1>&<emoji 2>*_
+┆👽 _${usedPrefix}scircle *<imagen>*_
+┆👽 _${usedPrefix}sremovebg *<imagen>*_
+┆👽 _${usedPrefix}semoji *<tipo> <emoji>*_
+┆👽 _${usedPrefix}attp *<texto>*_
+┆👽 _${usedPrefix}attp2 *<texto>*_
+┆👽 _${usedPrefix}attp3 *<texto>*_
+┆👽 _${usedPrefix}ttp *<texto>*_
+┆👽 _${usedPrefix}ttp2 *<texto>*_
+┆👽 _${usedPrefix}ttp3 *<texto>*_
+┆👽 _${usedPrefix}ttp4 *<texto>*_
+┆👽 _${usedPrefix}ttp5 *<texto>*_
+┆👽 _${usedPrefix}pat *<@tag>*_
+┆👽 _${usedPrefix}slap *<@tag>*_
+┆👽 _${usedPrefix}kiss *<@tag>*_
+┆👽 _${usedPrefix}dado_
+┆👽 _${usedPrefix}wm *<packname> <author>*_
+┆👽 _${usedPrefix}stickermarker *<efecto> <imagen>*_
+┆👽 _${usedPrefix}stickerfilter *<efecto> <imagen>*_
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆ *STICKERS DINÁMICOS*
+┆ *Realiza acciones con Stickers*
+┆ *Etiquetando a alguien!!*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆⛱️ _${usedPrefix}palmaditas | pat *@tag*_
+┆⛱️ _${usedPrefix}bofetada | slap *@tag*_
+┆⛱️ _${usedPrefix}golpear *@tag*_
+┆⛱️ _${usedPrefix}besar | kiss *@tag*_
+┆⛱️ _${usedPrefix}alimentar | food *@tag*
+└─────────────`.trim()
     conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
 	
 } catch (e) {
@@ -121,7 +140,7 @@ console.log(e)
 }}
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(menu|menú\?)$/i
+handler.command = /^(stickers|Stickers\?)$/i
 //handler.register = true
 handler.exp = 50
 handler.fail = null

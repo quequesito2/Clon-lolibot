@@ -80,12 +80,6 @@ let menu = `⌜ *${wm}* ⌟
 
 *Hola ${taguser}*
 
-□ *Creador: Mario*
-□ *Numero del bot ofc: wa.me/573183650526*
-□ *Tiempos activos :* *${uptime}*
-□ *Usuarios:* *${Object.keys(global.db.data.users).length}*
-□ *Registrado: ${rtotalreg} de ${totalreg}* ${(conn.user.jid == global.conn.user.jid ? '' : `\n□ *Soy un sub bot del:* wa.me/${global.conn.user.jid.split`@`[0]}`) || ''}
-    
 ◉ _*INFO DEL USUARIO*_
 □ *🙌 Registrado:* ${user.registered === true ? '✅' : '❌ _#verificar_'}
 □ *🎟️ Premium:* ${user.premiumTime > 0 ? '✅' : '❌ _#pase premium_'}
@@ -98,20 +92,22 @@ let menu = `⌜ *${wm}* ⌟
 □ *⚓ Rango:* ${role}
 ${readMore}
 
-┌───⊷ *MENU PRINCIPAL*
-┊□ _${usedPrefix}Botmenu_
-┊□ _${usedPrefix}Menuall_ 
-┊□ _${usedPrefix}Menujuegos_ 
-┊□️ _${usedPrefix}Descargas_ 
-┊□ _${usedPrefix}Menuchat_
-┊□ _${usedPrefix}Convertidores_
-┊□ _${usedPrefix}Efectos_
-┊□ _${usedPrefix}Menurandom_
-┊□ _${usedPrefix}Buscadores_
-┊□ _${usedPrefix}Herramientas_
-┊□ _${usedPrefix}Stickers_
-┊□ _${usedPrefix}Menuowner_
-└───────────────────`.trim()
+┌───⊷ *BUSCADORES*
+┆ *Busca lo que quieres con el Bot!!*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆🔍 _${usedPrefix}stickersearch *<texto>*_
+┆🔍 _${usedPrefix}stickersearch2 *<texto>*_
+┆🔍 _${usedPrefix}animeinfo *<texto>*_
+┆🔍 _${usedPrefix}google *<texto>*_
+┆🔍 _${usedPrefix}letra *<texto>*_
+┆🔍 _${usedPrefix}wikipedia *<texto>*_
+┆🔍 _${usedPrefix}ytsearch *<texto>*_
+┆🔍 _${usedPrefix}apkdone *<texto>*_
+┆🔍 _${usedPrefix}apkgoogle *<texto>*_
+┆🔍 _${usedPrefix}apkmody *<texto>*
+┆🔍 _${usedPrefix}uapkpro *<texto>*_
+┆🔍 _${usedPrefix}playstore *<texto>*_
+└─────────────`.trim()
     conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
 	
 } catch (e) {
@@ -121,7 +117,7 @@ console.log(e)
 }}
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(menu|menú\?)$/i
+handler.command = /^(buscadores|Buscadores\?)$/i
 //handler.register = true
 handler.exp = 50
 handler.fail = null

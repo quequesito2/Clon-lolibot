@@ -79,39 +79,68 @@ let adReply = { fileLength: fsizedoc, seconds: fsizedoc, contextInfo: { forwardi
 let menu = `⌜ *${wm}* ⌟  
 
 *Hola ${taguser}*
-
-□ *Creador: Mario*
-□ *Numero del bot ofc: wa.me/573183650526*
-□ *Tiempos activos :* *${uptime}*
-□ *Usuarios:* *${Object.keys(global.db.data.users).length}*
-□ *Registrado: ${rtotalreg} de ${totalreg}* ${(conn.user.jid == global.conn.user.jid ? '' : `\n□ *Soy un sub bot del:* wa.me/${global.conn.user.jid.split`@`[0]}`) || ''}
-    
+   
 ◉ _*INFO DEL USUARIO*_
 □ *🙌 Registrado:* ${user.registered === true ? '✅' : '❌ _#verificar_'}
 □ *🎟️ Premium:* ${user.premiumTime > 0 ? '✅' : '❌ _#pase premium_'}
 □ *🔰 Mi estado:* ${typeof user.miestado !== 'string' ? '_#miestado || Estado no asignado_' : '_Me siento ' + user.miestado + '_'}
-□ *🎖️ Nivel:* ${level}
-□ *💎 Diamantes:* ${limit}
-□ *👾 LoliCoins:* ${money}
-□ *🪙 Tokens:* ${joincount}
-□ *🧰 Experiencia:* ${exp}
-□ *⚓ Rango:* ${role}
+
 ${readMore}
 
-┌───⊷ *MENU PRINCIPAL*
-┊□ _${usedPrefix}Botmenu_
-┊□ _${usedPrefix}Menuall_ 
-┊□ _${usedPrefix}Menujuegos_ 
-┊□️ _${usedPrefix}Descargas_ 
-┊□ _${usedPrefix}Menuchat_
-┊□ _${usedPrefix}Convertidores_
-┊□ _${usedPrefix}Efectos_
-┊□ _${usedPrefix}Menurandom_
-┊□ _${usedPrefix}Buscadores_
-┊□ _${usedPrefix}Herramientas_
-┊□ _${usedPrefix}Stickers_
-┊□ _${usedPrefix}Menuowner_
-└───────────────────`.trim()
+┌───⊷ *GRUPOS*
+┆ *Mejora tú Grupo con LoliBot*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆💎 _${usedPrefix}add *<numero>*_
+┆💎 _${usedPrefix}kick *<@tag>*_
+┆💎 _${usedPrefix}grupo *<abrir / cerrar>*_
+┆💎 _${usedPrefix}grouptime *<opcion> <tiempo>*_
+┆💎 _${usedPrefix}promote *<@tag>*_
+┆💎 _${usedPrefix}demote *<@tag>*_
+┆💎 _admins *<texto>*_ (𝑢𝑠𝑜 𝑠𝑖𝑛 𝑝𝑟𝑒𝑓𝑖𝑗𝑜)
+┆💎 _${usedPrefix}demote *<@tag>*_
+┆💎 _${usedPrefix}infogroup_
+┆💎 _${usedPrefix}resetlink_
+┆💎 _${usedPrefix}link_
+┆💎 _${usedPrefix}setname *<texto>*_
+┆💎 _${usedPrefix}setdesc *<texto>*_
+┆💎 _${usedPrefix}invocar *<texto>*_
+┆💎 _${usedPrefix}setwelcome *<texto>*_
+┆💎 _${usedPrefix}setbye *<texto>*_
+┆💎 _${usedPrefix}hidetag *<texto>*_
+┆💎 _${usedPrefix}warn *<@tag>*_
+┆💎 _${usedPrefix}unwarn *<@tag>*_
+┆💎 _${usedPrefix}listwarn_
+┆💎 _${usedPrefix}fantasmas_
+┆💎 _${usedPrefix}destraba_
+┆💎 _${usedPrefix}setpp *<imagen>*_
+└─────────────
+
+┌───⊷ *SER PREMIUM*
+┆ *Convierte en un(a)*
+┆ *Usuario(a) Premium!!*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆🎟️ _${usedPrefix}listapremium_
+┆🎟️ _${usedPrefix}pase premium_
+┆🎟️ _${usedPrefix}pass premium_
+└─────────────
+
+┌───⊷ *FRASES Y TEXTOS*
+┆ *Enamora a tu enamorada/o*
+┆ *con esta frases/piropo uwu*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆ 🥀 _${usedPrefix}piropo_
+┆🥀 _${usedPrefix}consejo_
+┆🥀 _${usedPrefix}fraseromantica_
+└─────────────
+
+┌───⊷ *CHATS ANONIMO*
+┆ *¡Escribe con Alguien* 
+┆ *de forma Anónima!* 
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆📳 _${usedPrefix}start_
+┆📳 _${usedPrefix}next_
+┆📳 _${usedPrefix}leave_
+└─────────────`.trim()
     conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
 	
 } catch (e) {
@@ -121,7 +150,7 @@ console.log(e)
 }}
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(menu|menú\?)$/i
+handler.command = /^(menuchat|Menuchat\?)$/i
 //handler.register = true
 handler.exp = 50
 handler.fail = null

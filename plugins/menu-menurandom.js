@@ -80,12 +80,6 @@ let menu = `⌜ *${wm}* ⌟
 
 *Hola ${taguser}*
 
-□ *Creador: Mario*
-□ *Numero del bot ofc: wa.me/573183650526*
-□ *Tiempos activos :* *${uptime}*
-□ *Usuarios:* *${Object.keys(global.db.data.users).length}*
-□ *Registrado: ${rtotalreg} de ${totalreg}* ${(conn.user.jid == global.conn.user.jid ? '' : `\n□ *Soy un sub bot del:* wa.me/${global.conn.user.jid.split`@`[0]}`) || ''}
-    
 ◉ _*INFO DEL USUARIO*_
 □ *🙌 Registrado:* ${user.registered === true ? '✅' : '❌ _#verificar_'}
 □ *🎟️ Premium:* ${user.premiumTime > 0 ? '✅' : '❌ _#pase premium_'}
@@ -98,20 +92,82 @@ let menu = `⌜ *${wm}* ⌟
 □ *⚓ Rango:* ${role}
 ${readMore}
 
-┌───⊷ *MENU PRINCIPAL*
-┊□ _${usedPrefix}Botmenu_
-┊□ _${usedPrefix}Menuall_ 
-┊□ _${usedPrefix}Menujuegos_ 
-┊□️ _${usedPrefix}Descargas_ 
-┊□ _${usedPrefix}Menuchat_
-┊□ _${usedPrefix}Convertidores_
-┊□ _${usedPrefix}Efectos_
-┊□ _${usedPrefix}Menurandom_
-┊□ _${usedPrefix}Buscadores_
-┊□ _${usedPrefix}Herramientas_
-┊□ _${usedPrefix}Stickers_
-┊□ _${usedPrefix}Menuowner_
-└───────────────────`.trim()
+┌───⊷ *FRASES Y TEXTOS*
+┆ *Enamora a tu enamorada/o*
+┆ *con esta frases/piropo uwu*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆ 🥀 _${usedPrefix}piropo_
+┆🥀 _${usedPrefix}consejo_
+┆🥀 _${usedPrefix}fraseromantica_
+└─────────────
+
+┌───⊷ *RANDOM*
+┆👾 _${usedPrefix}kpop *<blackpink / exo / bts>*_
+┆👾 _${usedPrefix}cristianoronaldo_
+┆👾 _${usedPrefix}messi_
+┆👾 _${usedPrefix}meme_
+┆👾 _${usedPrefix}itzy_
+┆👾 _${usedPrefix}blackpink_
+┆👾 _${usedPrefix}lolivid_
+┆👾 _${usedPrefix}loli_
+┆👾 _${usedPrefix}navidad_
+┆👾 _${usedPrefix}ppcouple_
+┆👾 _${usedPrefix}wpmontaña_
+┆👾 _${usedPrefix}pubg_
+┆👾 _${usedPrefix}wpgaming_
+┆👾 _${usedPrefix}wpaesthetic_
+┆👾 _${usedPrefix}wpaesthetic2_
+┆👾 _${usedPrefix}wprandom_
+┆👾 _${usedPrefix}wallhp_
+┆👾 _${usedPrefix}wpvehiculo_
+┆👾 _${usedPrefix}wpmoto_
+┆👾 _${usedPrefix}coffee_
+┆👾 _${usedPrefix}pentol_
+┆👾 _${usedPrefix}caricatura_
+┆👾 _${usedPrefix}ciberespacio_
+┆👾 _${usedPrefix}technology_
+┆👾 _${usedPrefix}doraemon_
+┆👾 _${usedPrefix}hacker_
+┆👾 _${usedPrefix}planeta_
+┆👾 _${usedPrefix}randomprofile_
+┆👾 _${usedPrefix}neko_
+┆👾 _${usedPrefix}waifu_
+┆👾 _${usedPrefix}akira_
+┆👾 _${usedPrefix}akiyama_
+┆👾 _${usedPrefix}anna_
+┆👾 _${usedPrefix}asuna_
+┆👾 _${usedPrefix}ayuzawa_
+┆👾 _${usedPrefix}boruto_
+┆👾 _${usedPrefix}chiho_
+┆👾 _${usedPrefix}chitoge_
+┆👾 _${usedPrefix}deidara_
+┆👾 _${usedPrefix}erza_
+┆👾 _${usedPrefix}elaina_
+┆👾 _${usedPrefix}eba_
+┆👾 _${usedPrefix}emilia_
+┆👾 _${usedPrefix}hestia_
+┆👾 _${usedPrefix}hinata_
+┆👾 _${usedPrefix}inori_
+┆👾 _${usedPrefix}isuzu_
+┆👾 _${usedPrefix}itachi_
+┆👾 _${usedPrefix}itori_
+┆👾 _${usedPrefix}kaga_
+┆👾 _${usedPrefix}kagura_
+┆👾 _${usedPrefix}kaori_
+┆👾 _${usedPrefix}keneki_
+┆👾 _${usedPrefix}kotori_
+┆👾 _${usedPrefix}kurumi_
+┆👾 _${usedPrefix}madara_
+┆👾 _${usedPrefix}mikasa_
+┆👾 _${usedPrefix}miku_
+┆👾 _${usedPrefix}minato_
+┆👾 _${usedPrefix}naruto_
+┆👾 _${usedPrefix}nezuko_
+┆👾 _${usedPrefix}sagiri_
+┆👾 _${usedPrefix}sasuke_
+┆👾 _${usedPrefix}sakura_
+┆👾 _${usedPrefix}cosplay_
+└─────────────`.trim()
     conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
 	
 } catch (e) {
@@ -121,7 +177,7 @@ console.log(e)
 }}
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(menu|menú\?)$/i
+handler.command = /^(menurandom|Menurandom\?)$/i
 //handler.register = true
 handler.exp = 50
 handler.fail = null

@@ -80,12 +80,6 @@ let menu = `⌜ *${wm}* ⌟
 
 *Hola ${taguser}*
 
-□ *Creador: Mario*
-□ *Numero del bot ofc: wa.me/573183650526*
-□ *Tiempos activos :* *${uptime}*
-□ *Usuarios:* *${Object.keys(global.db.data.users).length}*
-□ *Registrado: ${rtotalreg} de ${totalreg}* ${(conn.user.jid == global.conn.user.jid ? '' : `\n□ *Soy un sub bot del:* wa.me/${global.conn.user.jid.split`@`[0]}`) || ''}
-    
 ◉ _*INFO DEL USUARIO*_
 □ *🙌 Registrado:* ${user.registered === true ? '✅' : '❌ _#verificar_'}
 □ *🎟️ Premium:* ${user.premiumTime > 0 ? '✅' : '❌ _#pase premium_'}
@@ -98,19 +92,57 @@ let menu = `⌜ *${wm}* ⌟
 □ *⚓ Rango:* ${role}
 ${readMore}
 
-┌───⊷ *MENU PRINCIPAL*
-┊□ _${usedPrefix}Botmenu_
-┊□ _${usedPrefix}Menuall_ 
-┊□ _${usedPrefix}Menujuegos_ 
-┊□️ _${usedPrefix}Descargas_ 
-┊□ _${usedPrefix}Menuchat_
-┊□ _${usedPrefix}Convertidores_
-┊□ _${usedPrefix}Efectos_
-┊□ _${usedPrefix}Menurandom_
-┊□ _${usedPrefix}Buscadores_
-┊□ _${usedPrefix}Herramientas_
-┊□ _${usedPrefix}Stickers_
-┊□ _${usedPrefix}Menuowner_
+┌───⊷ *PROPIETARIO DEL BOT*
+┆ *Comando exclusivo para Propietario/owner del bot*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆👑 > *<funcion>*
+┆👑 => *<funcion>*
+┆👑 $ *<funcion>*
+┆👑 _${usedPrefix}setprefix *<prefijo>*_
+┆👑 _${usedPrefix}resetprefix_
+┆👑 _${usedPrefix}autoadmin_
+┆👑 _${usedPrefix}leavegc_
+┆👑 _${usedPrefix}cajafuerte_
+┆👑 _${usedPrefix}blocklist_
+┆👑 _${usedPrefix}block *<@tag / numero>*_
+┆👑 _${usedPrefix}unblock *<@tag / numero>*_
+┆👑 _${usedPrefix}enable *restrict*_
+┆👑 _${usedPrefix}disable *restrict*_
+┆👑 _${usedPrefix}enable *autoread*_
+┆👑 _${usedPrefix}disable *autoread*_
+┆👑 _${usedPrefix}enable *public*_
+┆👑 _${usedPrefix}disable *public*_
+┆👑 _${usedPrefix}enable *pconly*_
+┆👑 _${usedPrefix}disable *pconly*_
+┆👑 _${usedPrefix}enable *gconly*_
+┆👑 _${usedPrefix}disable *gconly*_
+┆👑 _${usedPrefix}enable *anticall*_
+┆👑 _${usedPrefix}disable *anticall*_
+┆👑 _${usedPrefix}enable *antiprivado*_
+┆👑 _${usedPrefix}disable *antiprivado*_
+┆👑 _${usedPrefix}msg *<texto>*_
+┆👑 _${usedPrefix}banchat_
+┆👑 _${usedPrefix}unbanchat_
+┆👑 _${usedPrefix}banuser *<@tag>*_
+┆👑 _${usedPrefix}unbanuser *<@tag>*_
+┆👑 _${usedPrefix}dardiamantes *<@tag>*_
+┆👑 _${usedPrefix}añadirxp *<@tag>*_
+┆👑 _${usedPrefix}banuser *<@tag>*_
+┆👑 _${usedPrefix}bc *<texto>*_
+┆👑 _${usedPrefix}bcchats *<texto>*_
+┆👑 _${usedPrefix}bcgc *<texto>*_
+┆👑 _${usedPrefix}bcbot *<texto>*_
+┆👑 _${usedPrefix}cleartpm_
+┆👑 _${usedPrefix}restart_
+┆👑 _${usedPrefix}update_
+┆👑 _${usedPrefix}banlist_
+┆👑 _${usedPrefix}addprem *<@tag>*_
+┆👑 _${usedPrefix}delprem *<@tag>*_
+┆👑 _${usedPrefix}listprem_
+┆👑 _${usedPrefix}listcmd_
+┆👑 _${usedPrefix}setppbot *<responder a imagen>*_
+┆👑 _${usedPrefix}addcmd *<texto> <responder a sticker/imagen>*_
+┆ 👑 _${usedPrefix}delcmd *<responder a sticker/imagen con comando o texto asignado>*_
 └───────────────────`.trim()
     conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
 	
@@ -121,7 +153,7 @@ console.log(e)
 }}
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(menu|menú\?)$/i
+handler.command = /^(menuowner|Menuowner\?)$/i
 //handler.register = true
 handler.exp = 50
 handler.fail = null

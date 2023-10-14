@@ -79,13 +79,7 @@ let adReply = { fileLength: fsizedoc, seconds: fsizedoc, contextInfo: { forwardi
 let menu = `⌜ *${wm}* ⌟  
 
 *Hola ${taguser}*
-
-□ *Creador: Mario*
-□ *Numero del bot ofc: wa.me/573183650526*
-□ *Tiempos activos :* *${uptime}*
-□ *Usuarios:* *${Object.keys(global.db.data.users).length}*
-□ *Registrado: ${rtotalreg} de ${totalreg}* ${(conn.user.jid == global.conn.user.jid ? '' : `\n□ *Soy un sub bot del:* wa.me/${global.conn.user.jid.split`@`[0]}`) || ''}
-    
+ 
 ◉ _*INFO DEL USUARIO*_
 □ *🙌 Registrado:* ${user.registered === true ? '✅' : '❌ _#verificar_'}
 □ *🎟️ Premium:* ${user.premiumTime > 0 ? '✅' : '❌ _#pase premium_'}
@@ -97,21 +91,21 @@ let menu = `⌜ *${wm}* ⌟
 □ *🧰 Experiencia:* ${exp}
 □ *⚓ Rango:* ${role}
 ${readMore}
-
-┌───⊷ *MENU PRINCIPAL*
-┊□ _${usedPrefix}Botmenu_
-┊□ _${usedPrefix}Menuall_ 
-┊□ _${usedPrefix}Menujuegos_ 
-┊□️ _${usedPrefix}Descargas_ 
-┊□ _${usedPrefix}Menuchat_
-┊□ _${usedPrefix}Convertidores_
-┊□ _${usedPrefix}Efectos_
-┊□ _${usedPrefix}Menurandom_
-┊□ _${usedPrefix}Buscadores_
-┊□ _${usedPrefix}Herramientas_
-┊□ _${usedPrefix}Stickers_
-┊□ _${usedPrefix}Menuowner_
-└───────────────────`.trim()
+┌───⊷ *CONVERTIDORES*
+┆ *Convierte sticker en imagen!!*
+┆ *Crea enlace de archivos!!*
+┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┆🧧 _${usedPrefix}togifaud *<video>*_
+┆🧧 _${usedPrefix}robar *texto*
+┆🧧 _${usedPrefix}wm *texto*
+┆🧧 _${usedPrefix}toimg *<sticker>*_
+┆🧧 _${usedPrefix}tomp3 *<video>*_
+┆🧧 _${usedPrefix}tomp3 *<nota de voz>*_
+┆🧧 _${usedPrefix}toptt *<video / audio>*_
+┆🧧 _${usedPrefix}tovideo *<sticker>*_
+┆🧧 _${usedPrefix}tourl *<video / imagen / audio>*_
+┆🧧 _${usedPrefix}tts es *<texto>*_
+└─────────────`.trim()
     conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
 	
 } catch (e) {
@@ -121,7 +115,7 @@ console.log(e)
 }}
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(menu|menú\?)$/i
+handler.command = /^(convertidores|Convertidores\?)$/i
 //handler.register = true
 handler.exp = 50
 handler.fail = null
